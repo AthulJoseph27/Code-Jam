@@ -104,9 +104,10 @@ void solve(int cc, int n, int b)
     // and all 8s below it, as much as possible
     // so we have a buffer of 10 + 10 = 20 possible 9s and 8s (10 each)
     // + small tweakings
-    // currently filling up to n-3 positions with everything except 7,8,9 and then placing
+    // currently filling up to n-2 positions with everything except 7,8,9 and then placing
     // them on the highest tower
-
+    // with experimentation , n-2 positions with 7,8,9 yeilds the best result
+    
     vector<int> a(n, 0);
     int l = n * b;
     int col = 0;
@@ -116,7 +117,7 @@ void solve(int cc, int n, int b)
         cin >> d;
         if (col < n && d < 7)
         {
-            if (a[col] >= b - 3)
+            if (a[col] >= b - 2)
             {
                 col++;
             }
